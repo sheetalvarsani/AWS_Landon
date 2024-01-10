@@ -1,32 +1,24 @@
 import React from "react";
+import galleryImagesData from './data/gallery_images.json'
 
 const Welcome = () => {
   return (
     <div className="scene" id="welcome">
       <article className="content">
         <div className="gallery">
-          <img
-            src="https://landonhotel.com/images/hotel/intro_room.jpg"
-            alt="Intro Gallery Room Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_pool.jpg"
-            alt="Intro Gallery Pool Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_dining.jpg"
-            alt="Intro Gallery Dining Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_attractions.jpg"
-            alt="Intro Gallery Attractions Sample Pictures"
-          />
-          <img
-            className="hidesm"
-            src="https://landonhotel.com/images/hotel/intro_wedding.jpg"
-            alt="Intro Gallery Dining Sample Pictures"
-          />
+          {
+            galleryImagesData.map((image) =>
+            <img className={image.className} src={image.src} alt={image.alt}/>
+            )
+          }
+          {/* The following images were changed to be more dynamic by doing a gallery_images.json file and adding the above code:
+          <img src="https://landonhotel.com/images/hotel/intro_room.jpg" alt="Intro Gallery Room Sample Pictures"/>
+          <img src="https://landonhotel.com/images/hotel/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures"/>
+          <img src="https://landonhotel.com/images/hotel/intro_dining.jpg" alt="Intro Gallery Dining Sample Pictures"/>
+          <img src="https://landonhotel.com/images/hotel/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures"/>
+          <img className="hidesm" src="https://landonhotel.com/images/hotel/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures"/>  */}
         </div>
+
         <h1>Welcome to Landon&nbsp;Hotel</h1>
         <p>
           The original Landon perseveres after 50 years in the heart of West

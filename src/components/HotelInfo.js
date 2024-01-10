@@ -1,4 +1,6 @@
 import React from "react";
+import accessibilitiesData from './data/accessibilities.json'
+import servicesData from './data/services.json'
 
 const HotelInfo = () => {
   return (
@@ -43,6 +45,12 @@ const HotelInfo = () => {
             your stay comfortable, and your experience one-of-a-kind.
           </p>
           <ul>
+            {
+              servicesData.map((service) =>
+              <li>{service.name}</li>
+              )
+            }
+            {/* The following list items were changed to be more dynamic by doing a services.json file and adding the above code:
             <li>Indoor pool</li>
             <li>24-hour fitness center</li>
             <li>Massage therapy</li>
@@ -57,7 +65,7 @@ const HotelInfo = () => {
             <li>Laundry &amp; dry cleaning service</li>
             <li>Daily paper</li>
             <li>Certified "green" hotel</li>
-            <li>Pet-friendly rooms &amp; common areas</li>
+            <li>Pet-friendly rooms &amp; common areas</li> */}
           </ul>
         </section>
         <section className="checklist" id="accessibility">
@@ -68,6 +76,12 @@ const HotelInfo = () => {
             needs:
           </p>
           <ul>
+          {
+              accessibilitiesData.map((accessibility) =>
+              <li>{accessibility.name}</li>
+              )
+            }
+            {/* The following list items were changed to be more dynamic by doing a accessibilities.json file and adding the above code:
             <li>Grab bars on tub walls</li>
             <li>Shower chairs</li>
             <li>Hand held shower sprayers</li>
@@ -80,7 +94,7 @@ const HotelInfo = () => {
             <li>Telephone amplification handsets</li>
             <li>Closed captioned television converters</li>
             <li>Vibrating alarm clocks</li>
-            <li>Telephones with volume control</li>
+            <li>Telephones with volume control</li> */}
           </ul>
         </section>
       </article>
